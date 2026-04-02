@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-users.yaml
+  - include:
+      file: db/changelog/002-create-profile-visits.yaml
+  - include:
+      file: db/changelog/003-create-profile-likes.yaml

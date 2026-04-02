@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: social-network
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/social_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 3000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      leak-detection-threshold: 5000
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+
+server:
+  port: 8080

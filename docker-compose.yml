@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16.9-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: social_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Persistent storage volume
+
+volumes:
+  pgdata:
